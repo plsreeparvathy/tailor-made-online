@@ -9,7 +9,7 @@ import { ENQUIRY_FORM_URL } from "@/lib/enquiryFormUrl";
 
 export default function EnquiryForm() {
   return (
-    <section id="contact" className="relative bg-pearl py-24 lg:py-32">
+    <section id="contact" aria-labelledby="contact-heading" className="relative bg-pearl py-24 lg:py-32">
       <BlockPrintPattern />
 
       <div className="relative z-10 mx-auto max-w-3xl px-6 lg:px-8">
@@ -22,12 +22,14 @@ export default function EnquiryForm() {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <h2 className="font-heading text-4xl font-light text-brown md:text-5xl">
+          <h2 id="contact-heading" className="font-heading text-4xl font-light text-brown md:text-5xl">
             Bring Your Collection to Life
           </h2>
-          <p className="mx-auto mt-4 max-w-xl font-body text-brown-muted">
-            Share your label idea with us — our team will get in touch to help you
-            curate and create your own ethnic wear collection.
+          <p className="mx-auto mt-4 max-w-2xl font-body text-brown-muted leading-relaxed">
+            Ready to launch your ethnic wear label? Share your design idea, target
+            styles, and estimated quantities — our Bengaluru team will respond with
+            sampling timelines, production guidance, and a clear path from concept to
+            finished garments.
           </p>
 
           <motion.div

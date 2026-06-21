@@ -62,7 +62,7 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="relative bg-pink-soft py-24 lg:py-32">
+    <section id="how-it-works" aria-labelledby="how-it-works-heading" className="relative bg-pink-soft py-24 lg:py-32">
       <BlockPrintPattern />
 
       <div className="relative z-10 mx-auto max-w-4xl px-6 lg:px-8">
@@ -73,11 +73,13 @@ export default function HowItWorks() {
           transition={{ duration: 0.6 }}
           className="mb-16 text-center"
         >
-          <h2 className="font-heading text-4xl font-light text-brown md:text-5xl">
+          <h2 id="how-it-works-heading" className="font-heading text-4xl font-light text-brown md:text-5xl">
             From Idea to Label
           </h2>
-          <p className="mx-auto mt-4 max-w-xl font-body text-brown-muted">
-            A transparent, step-by-step process designed for fashion entrepreneurs
+          <p className="mx-auto mt-4 max-w-2xl font-body text-brown-muted leading-relaxed">
+            Our nine-step manufacturing process is built for clarity — from your first
+            design sketch to the final shipment. No hidden steps, no surprises. Just a
+            transparent path to launching your own ethnic wear collection in India.
           </p>
         </motion.div>
 

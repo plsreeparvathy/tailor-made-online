@@ -11,7 +11,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen w-full bg-pearl">
+    <section aria-labelledby="hero-heading" className="relative min-h-screen w-full bg-pearl">
       {/* Pearl · peach · pink background wash */}
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
         <div className="absolute inset-0 pearl-peach-pink-glow opacity-80" />
@@ -35,7 +35,7 @@ export default function Hero() {
             <span className="h-px w-12 bg-peach sm:w-16" />
           </div>
 
-          <h1 className="w-full text-center font-heading text-[2.75rem] font-light leading-[0.95] tracking-[0.08em] text-brown sm:text-6xl md:text-7xl">
+          <h1 id="hero-heading" className="w-full text-center font-heading text-[2.75rem] font-light leading-[0.95] tracking-[0.08em] text-brown sm:text-6xl md:text-7xl">
             TAILOR
             <span className="text-peach-deep">-</span>
             MADE
@@ -62,8 +62,9 @@ export default function Hero() {
           </h2>
 
           <p className="mt-5 max-w-xl text-center font-body text-[15px] leading-[1.75] text-brown-muted md:text-base">
-            Low-MOQ manufacturing for ethnic wear labels — block prints,
-            handlooms, and artisanal Indian fashion. Start with just{" "}
+            Bengaluru&apos;s trusted low-MOQ manufacturer for ethnic wear labels —
+            block prints, handlooms, kurtis, co-ord sets, and artisanal Indian
+            fashion. Partner with a women-led team and start production from just{" "}
             <em className="font-subheading not-italic text-peach-deep">100 pieces.</em>
           </p>
 

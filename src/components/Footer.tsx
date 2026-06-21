@@ -18,7 +18,7 @@ function WhatsAppIcon({ className }: { className?: string }) {
 
 export default function Footer() {
   return (
-    <footer className="bg-pink-deep text-pearl">
+    <footer aria-label="Site footer" className="bg-pink-deep text-pearl">
       <BlockPrintDivider color="#F0B090" />
 
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
@@ -30,8 +30,12 @@ export default function Footer() {
             Online
           </div>
 
-          <p className="mx-auto mt-6 max-w-lg font-heading text-lg italic text-pearl/75">
+          <p className="mx-auto mt-6 max-w-xl font-heading text-lg italic text-pearl/75">
             Empowering Women • Embracing Sustainability • Crafting Quality Since 2017
+          </p>
+          <p className="mx-auto mt-4 max-w-lg font-body text-sm text-pearl/65 leading-relaxed">
+            Ethnic wear manufacturing for designers and boutiques across India —
+            block prints, handlooms, kurtis, and co-ord sets from 100 pieces.
           </p>
         </div>
 

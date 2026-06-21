@@ -1,7 +1,7 @@
 import { Cormorant_Garamond, Playfair_Display, DM_Sans } from "next/font/google";
-import type { Metadata } from "next";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
+import { buildMetadata } from "@/lib/seo";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -24,20 +24,7 @@ const dmSans = DM_Sans({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: "TailorMade Online | Curate & Create Your Own Label",
-  description:
-    "Low-MOQ manufacturing for Indian ethnic wear labels — block prints, handlooms, and artisanal fashion. Start with just 100 pieces.",
-  keywords: [
-    "ethnic wear manufacturing",
-    "block print garments",
-    "low MOQ",
-    "Indian fashion",
-    "Bengaluru",
-    "kurtis",
-    "handloom",
-  ],
-};
+export const metadata = buildMetadata();
 
 export default function RootLayout({
   children,

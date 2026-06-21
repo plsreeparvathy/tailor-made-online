@@ -21,32 +21,38 @@ const products: ProductCard[] = [
   {
     icon: Shirt,
     title: "Kurtis & Tunics",
-    description: "Classic silhouettes in natural and printed fabrics",
+    description:
+      "Classic and contemporary kurti silhouettes in cotton, linen, rayon, and printed fabrics — ideal for everyday wear and festive collections alike.",
   },
   {
     icon: Layers,
     title: "Co-ord Sets",
-    description: "Matching sets in block prints, solids, and handlooms",
+    description:
+      "Matching top-and-bottom sets in block prints, ajrakh, solids, and handlooms. A bestseller category for D2C brands and boutique labels.",
   },
   {
     icon: Stamp,
     title: "Block Print Garments",
-    description: "Authentic hand block and screen print designs",
+    description:
+      "Authentic hand block and screen print designs on ethnic separates — from Jaipur-inspired motifs to custom print development for your label.",
   },
   {
     icon: Sparkles,
     title: "Dresses & Anarkalis",
-    description: "Flowing ethnic silhouettes for every occasion",
+    description:
+      "Flowing ethnic silhouettes, floor-length anarkalis, and occasion wear crafted with careful finishing for weddings, festivals, and premium retail.",
   },
   {
     icon: Baby,
     title: "Kidswear",
-    description: "Gentle fabrics, playful Indian designs for little ones",
+    description:
+      "Gentle, skin-friendly fabrics with playful Indian prints and comfortable fits — perfect for children's ethnic wear brands and family collections.",
   },
   {
     icon: UserRound,
     title: "Menswear",
-    description: "Kurtas and ethnic separates crafted with precision",
+    description:
+      "Kurtas, ethnic shirts, and separates tailored with precision — supporting brands that want coordinated family or couple collections.",
   },
 ];
 
@@ -69,7 +75,7 @@ const cardVariants = {
 
 export default function WhatWeMake() {
   return (
-    <section id="what-we-make" className="bg-pearl py-24 lg:py-32">
+    <section id="what-we-make" aria-labelledby="what-we-make-heading" className="bg-pearl py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -78,11 +84,14 @@ export default function WhatWeMake() {
           transition={{ duration: 0.6 }}
           className="mb-16 text-center"
         >
-          <h2 className="font-heading text-4xl font-light text-brown md:text-5xl">
+          <h2 id="what-we-make-heading" className="font-heading text-4xl font-light text-brown md:text-5xl">
             What We Make
           </h2>
-          <p className="mx-auto mt-4 max-w-xl font-body text-brown-muted">
-            Specialising in Indian ethnic garments crafted with care and intention
+          <p className="mx-auto mt-4 max-w-2xl font-body text-brown-muted leading-relaxed">
+            As a Bengaluru-based ethnic wear manufacturer, we produce a full range of
+            Indian garments for emerging and established fashion labels — from
+            sampling and development through to bulk production and quality-checked
+            dispatch.
           </p>
         </motion.div>
 

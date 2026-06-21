@@ -5,7 +5,7 @@ const marqueeText =
 
 export default function MarqueeBanner() {
   return (
-    <div className="overflow-hidden bg-pink-deep py-3">
+    <div className="overflow-hidden bg-pink-deep py-3" aria-hidden="true">
       <div className="flex animate-marquee whitespace-nowrap">
         {[...Array(4)].map((_, i) => (
           <span
