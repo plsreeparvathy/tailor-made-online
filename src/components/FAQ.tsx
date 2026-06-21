@@ -2,6 +2,12 @@
 
 import { motion } from "framer-motion";
 import { faqItems } from "@/lib/seo";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 export default function FAQ() {
   return (
@@ -30,25 +36,22 @@ export default function FAQ() {
           </p>
         </motion.div>
 
-        <dl className="mt-12 space-y-6">
-          {faqItems.map((item, index) => (
-            <motion.div
-              key={item.question}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.4, delay: index * 0.05 }}
-              className="rounded-sm border border-peach-light/70 bg-pearl/90 p-6"
-            >
-              <dt className="font-subheading text-lg font-semibold text-brown">
-                {item.question}
-              </dt>
-              <dd className="mt-3 font-body text-sm leading-relaxed text-brown-muted">
-                {item.answer}
-              </dd>
-            </motion.div>
-          ))}
-        </dl>
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ duration: 0.4, delay: 0.1 }}
+          className="mt-12"
+        >
+          <Accordion type="single" collapsible className="space-y-4">
+            {faqItems.map((item, index) => (
+              <AccordionItem key={item.question} value={`item-${index}`}>
+                <AccordionTrigger>{item.question}</AccordionTrigger>
+                <AccordionContent>{item.answer}</AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </motion.div>
       </div>
     </section>
   );
