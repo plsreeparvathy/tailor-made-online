@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import MarqueeBanner from "@/components/MarqueeBanner";
 import About from "@/components/About";
 import WhatWeMake from "@/components/WhatWeMake";
+import Gallery from "@/components/Gallery";
 import HowItWorks from "@/components/HowItWorks";
 import FAQ from "@/components/FAQ";
 import EnquiryForm from "@/components/EnquiryForm";
@@ -19,6 +20,7 @@ export default function Home() {
         <MarqueeBanner />
         <About />
         <WhatWeMake />
+        <Gallery />
         <HowItWorks />
         <FAQ />
         <EnquiryForm />

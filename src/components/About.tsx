@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Scissors, Leaf, Users } from "lucide-react";
+import Image from "next/image";
 import BlockPrintPattern from "./BlockPrintPattern";
 
 const valueCards = [
@@ -58,6 +59,15 @@ export default function About() {
           <h2 id="about-heading" className="font-heading text-4xl font-light text-brown md:text-5xl">
             Crafted with Purpose, Rooted in Tradition
           </h2>
+          <div className="mt-8 rounded-xl overflow-hidden shadow-lg">
+            <Image
+              src="/images/four.jpeg"
+              alt="Tailor Made Ethnic Wear"
+              width={600}
+              height={400}
+              className="w-full h-auto object-cover"
+            />
+          </div>
           <div className="mt-6 space-y-4 font-body text-brown-muted leading-relaxed">
             <p>
               Founded in 2017, Ahaskara Endeavors LLP was built on a simple belief —
