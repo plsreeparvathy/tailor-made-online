@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import {
   Shirt,
   Layers,
@@ -93,6 +94,18 @@ export default function WhatWeMake() {
             sampling and development through to bulk production and quality-checked
             dispatch.
           </p>
+
+          <div className="mx-auto mt-12 max-w-4xl overflow-hidden rounded-3xl shadow-2xl ring-1 ring-slate-200">
+            <div className="relative h-64 md:h-80 lg:h-96 w-full">
+              <Image
+                src="/images/three.jpeg"
+                alt="What We Make product sample"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+          </div>
         </motion.div>
 
         <motion.div
