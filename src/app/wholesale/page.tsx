@@ -138,13 +138,14 @@ export default function WholesalePage() {
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-16 sm:px-8 lg:grid-cols-2 lg:py-24">
           <div className="text-center lg:text-left">
             <p className="font-body text-sm uppercase tracking-[0.25em] text-brown-muted">
-              Wholesale · MOQ 25 pieces
+              For boutiques &amp; resellers
             </p>
             <h1
               id="wholesale-heading"
               className="mt-4 font-heading text-4xl font-semibold leading-tight text-brown sm:text-5xl xl:text-6xl"
             >
-              Wholesale kurtis for boutiques &amp; resellers
+              Kurtis your customers will love,{" "}
+              <em className="text-pink-deep">wholesale from just 25 pieces</em>
             </h1>
             <p className="mx-auto mt-6 max-w-md font-body text-lg leading-relaxed text-brown lg:mx-0">
               {content.intro}
