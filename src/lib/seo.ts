@@ -34,9 +34,46 @@ export const faqItems = [
   },
 ] as const;
 
+export const wholesaleFaqItems = [
+  {
+    question: "What is the minimum order for wholesale?",
+    answer:
+      "25 pieces per order, with a minimum order value of ₹20,000. Existing customers can reorder from 10 pieces, subject to availability.",
+  },
+  {
+    question: "Can I mix styles and colours in one wholesale order?",
+    answer: "Yes. Mixed styles and colours can be selected within an order.",
+  },
+  {
+    question: "Which brands can I buy wholesale?",
+    answer:
+      "Our home-grown labels Fabsay — hand block printed cotton kurtis, sets, co-ords and dresses — and Label Kosa — pure cotton kurtis with embroidery, hand block and screen print details.",
+  },
+  {
+    question: "Is GST included in wholesale prices?",
+    answer:
+      "No. GST of 5% is charged extra, and shipping is at actuals, payable by the buyer.",
+  },
+  {
+    question: "What are the payment terms for wholesale orders?",
+    answer:
+      "100% advance — we don't offer credit. Orders are confirmed only after full payment and dispatched as per the confirmed stock/production timeline.",
+  },
+  {
+    question: "Can I return unsold wholesale stock?",
+    answer:
+      "No. Wholesale is not sale-or-return, so unsold stock cannot be returned. Genuine manufacturing defects can be reported within 48 hours and will be resolved after verification.",
+  },
+  {
+    question: "Who is wholesale suited for?",
+    answer:
+      "Boutiques, Instagram sellers, small multi-brand stores and emerging retailers who want to start small, test the market and reorder what sells.",
+  },
+] as const;
+
 export function buildMetadata(): Metadata {
-  const { name, tagline, description, url, keywords, locale } = siteConfig;
-  const title = `${name} | ${tagline}`;
+  const { name, description, url, keywords, locale } = siteConfig;
+  const title = `Low MOQ Ethnic Wear Manufacturer in Bengaluru | ${name}`;
   const ogTitle = `${name} — Low-MOQ Ethnic Wear Manufacturing in Bengaluru`;
 
   return {
@@ -123,6 +160,10 @@ export function buildJsonLd() {
     email,
     telephone: phone,
     logo: `${url}/images/logo.jpeg`,
+    brand: [
+      { "@type": "Brand", name: "Fabsay" },
+      { "@type": "Brand", name: "Label Kosa" },
+    ],
     sameAs,
   };
 
@@ -227,4 +268,70 @@ export function buildJsonLd() {
   };
 
   return [organization, localBusiness, website, faqPage, service, contactPoint];
+}
+
+export function buildWholesaleJsonLd() {
+  const { name, url } = siteConfig;
+  const pageUrl = `${url}/wholesale`;
+
+  const breadcrumb = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "@id": `${pageUrl}#breadcrumb`,
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name, item: url },
+      { "@type": "ListItem", position: 2, name: "Wholesale", item: pageUrl },
+    ],
+  };
+
+  const service = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${pageUrl}#service`,
+    name: "Wholesale ethnic wear for boutiques and resellers",
+    description:
+      "Wholesale cotton kurtis and co-ords from Fabsay and Label Kosa. MOQ 25 pieces, ₹20,000 minimum order value, reorders from 10 pieces.",
+    provider: { "@id": `${url}/#localbusiness` },
+    areaServed: "IN",
+    serviceType: "Wholesale clothing supply",
+    audience: {
+      "@type": "BusinessAudience",
+      audienceType: "Boutiques, Instagram sellers, small multi-brand stores and emerging retailers",
+    },
+    brand: [
+      { "@type": "Brand", name: "Fabsay" },
+      { "@type": "Brand", name: "Label Kosa" },
+    ],
+    offers: {
+      "@type": "Offer",
+      description: "Wholesale orders from 25 pieces; mixed styles and colours allowed",
+      eligibleQuantity: {
+        "@type": "QuantitativeValue",
+        minValue: 25,
+        unitText: "pieces",
+      },
+      eligibleTransactionVolume: {
+        "@type": "PriceSpecification",
+        price: 20000,
+        priceCurrency: "INR",
+      },
+      eligibleRegion: { "@type": "Country", name: "India" },
+    },
+  };
+
+  const faqPage = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": `${pageUrl}#faq`,
+    mainEntity: wholesaleFaqItems.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  };
+
+  return [breadcrumb, service, faqPage];
 }

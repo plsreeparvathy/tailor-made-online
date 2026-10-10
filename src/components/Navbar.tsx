@@ -98,8 +98,8 @@ export default function Navbar() {
                 key={link.href}
                 onClick={() => handleNavClick(link.href)}
                 className={cn(
-                  "whitespace-nowrap font-body text-sm font-medium tracking-wide text-brown transition-colors hover:text-pink",
-                  (pathname === link.href || pathname.startsWith(`${link.href}/`)) && "text-pink"
+                  "whitespace-nowrap font-body text-sm font-medium tracking-wide text-brown transition-colors hover:text-pink-deep",
+                  (pathname === link.href || pathname.startsWith(`${link.href}/`)) && "text-pink-deep"
                 )}
               >
                 {link.label}
@@ -148,7 +148,7 @@ export default function Navbar() {
                   <button
                     key={link.href}
                     onClick={() => handleNavClick(link.href)}
-                    className="border-b border-peach-wash py-3.5 text-left font-body text-base font-medium text-brown transition-colors hover:text-pink"
+                    className="border-b border-peach-wash py-3.5 text-left font-body text-base font-medium text-brown transition-colors hover:text-pink-deep"
                   >
                     {link.label}
                   </button>

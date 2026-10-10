@@ -4,7 +4,7 @@ export const siteConfig = {
   legalName: "Ahaskara Endeavors LLP",
   tagline: "Curate & Create Your Own Label",
   description:
-    "Low-MOQ ethnic wear manufacturing in Bengaluru — block prints, handlooms, kurtis, co-ord sets, and artisanal Indian fashion. Launch your label from just 100 pieces.",
+    "Private-label ethnic wear manufacturer in Bengaluru since 2017. MOQ 100 pieces per style — kurtis, co-ords & block prints for boutiques and new labels.",
   url:
     process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
     "https://tailormadeonline.in",

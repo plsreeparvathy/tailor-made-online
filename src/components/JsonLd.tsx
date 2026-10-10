@@ -1,8 +1,10 @@
 import { buildJsonLd } from "@/lib/seo";
 
-export default function JsonLd() {
-  const schemas = buildJsonLd();
-
+export default function JsonLd({
+  schemas = buildJsonLd(),
+}: {
+  schemas?: Record<string, unknown>[];
+}) {
   return (
     <>
       {schemas.map((schema) => (

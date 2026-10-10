@@ -62,7 +62,7 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" aria-labelledby="how-it-works-heading" className="relative bg-pink-soft py-24 lg:py-32">
+    <section id="how-it-works" aria-labelledby="how-it-works-heading" className="relative overflow-x-clip bg-pink-soft py-24 lg:py-32">
       <BlockPrintPattern />
 
       <div className="relative z-10 mx-auto max-w-4xl px-6 lg:px-8">
@@ -104,7 +104,7 @@ export default function HowItWorks() {
               >
                 <div className="hidden md:block md:w-1/2" />
 
-                <div className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-peach-deep font-heading text-lg font-semibold text-white shadow-warm md:absolute md:left-1/2 md:-translate-x-1/2">
+                <div className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-peach-ink font-heading text-lg font-semibold text-white shadow-warm md:absolute md:left-1/2 md:-translate-x-1/2">
                   {step.number}
                 </div>
 
@@ -114,7 +114,7 @@ export default function HowItWorks() {
                   }`}
                 >
                   <div className="rounded-sm border border-peach-light/60 bg-pearl p-6 shadow-sm transition-shadow hover:shadow-warm">
-                    <span className="mb-2 inline-block rounded-full bg-pink-light/80 px-3 py-1 font-body text-xs font-semibold text-pink">
+                    <span className="mb-2 inline-block rounded-full bg-pink-light/80 px-3 py-1 font-body text-xs font-semibold text-pink-deep">
                       Step {step.number}
                     </span>
                     <h3 className="font-subheading text-lg font-semibold text-brown">

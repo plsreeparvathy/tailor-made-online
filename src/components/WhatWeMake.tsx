@@ -122,7 +122,7 @@ export default function WhatWeMake() {
               className="group rounded-sm border border-peach-light/70 bg-pearl p-8 transition-all duration-300 hover:scale-[1.02] hover:shadow-gold"
             >
               <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-peach-light/80 transition-colors group-hover:bg-peach/30">
-                <product.icon className="h-7 w-7 text-peach-deep" />
+                <product.icon className="h-7 w-7 text-peach-ink" />
               </div>
               <h3 className="font-subheading text-xl font-semibold text-brown">
                 {product.title}

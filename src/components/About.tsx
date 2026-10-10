@@ -105,7 +105,7 @@ export default function About() {
               className="rounded-sm border border-pink-light/60 bg-pearl/90 p-6 text-center backdrop-blur-sm transition-shadow hover:shadow-warm"
             >
               <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-pink-light/80">
-                <card.icon className="h-6 w-6 text-pink" />
+                <card.icon className="h-6 w-6 text-pink-deep" />
               </div>
               <h3 className="font-subheading text-lg font-semibold text-brown">
                 {card.title}
