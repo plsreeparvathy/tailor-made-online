@@ -9,7 +9,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-peach-ink text-white hover:shadow-warm hover:scale-[1.02] active:scale-[0.98]",
+          "bg-peach-deep text-white hover:shadow-warm hover:scale-[1.02] active:scale-[0.98]",
         secondary:
           "border-2 border-pink-deep bg-transparent text-pink-deep hover:bg-pink-deep hover:text-pearl hover:shadow-warm hover:scale-[1.02]",
         outline:
