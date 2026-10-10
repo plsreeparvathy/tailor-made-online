@@ -135,7 +135,9 @@ export default function Gallery() {
                   autoPlay
                   muted
                   loop
-                  controls
+                  playsInline
+                  disablePictureInPicture
+                  aria-label={currentItem.alt}
                 />
               )}
             </AnimatePresence>
@@ -197,7 +199,12 @@ export default function Gallery() {
                 <div className="relative h-full w-full bg-gray-800 flex items-center justify-center">
                   <video
                     src={item.src}
-                    className="h-full w-full object-cover"
+                    className="pointer-events-none h-full w-full object-cover"
+                    muted
+                    playsInline
+                    preload="metadata"
+                    tabIndex={-1}
+                    aria-hidden="true"
                   />
                   <div className="absolute inset-0 flex items-center justify-center bg-black/30">
                     <div className="text-white text-lg">▶</div>

@@ -13,6 +13,7 @@ export const siteConfig = {
   phone: "+918550807555",
   email: "ahaskaraendeavors@gmail.com",
   whatsapp: "https://wa.me/918550807555",
+  wholesaleWhatsapp: "https://wa.me/917510680062",
   address: {
     street: "C303, DSR Green Fields, Whitefield",
     city: "Bengaluru",
@@ -49,7 +50,7 @@ export const siteConfig = {
   ],
 } as const;
 
-export const WHATSAPP_WHOLESALE_URL = `${siteConfig.whatsapp}?text=${encodeURIComponent(
+export const WHATSAPP_WHOLESALE_URL = `${siteConfig.wholesaleWhatsapp}?text=${encodeURIComponent(
   "Hi TailorMade Online! I'm interested in buying wholesale."
 )}`;
 
