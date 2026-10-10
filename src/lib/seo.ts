@@ -122,7 +122,7 @@ export function buildJsonLd() {
     foundingDate: String(foundedYear),
     email,
     telephone: phone,
-    logo: `${url}/icon.svg`,
+    logo: `${url}/images/logo.jpeg`,
     sameAs,
   };
 

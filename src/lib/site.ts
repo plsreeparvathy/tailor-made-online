@@ -49,6 +49,10 @@ export const siteConfig = {
   ],
 } as const;
 
+export const WHATSAPP_WHOLESALE_URL = `${siteConfig.whatsapp}?text=${encodeURIComponent(
+  "Hi TailorMade Online! I'm interested in buying wholesale."
+)}`;
+
 export function getFullAddress(): string {
   const { street, city, region, postalCode } = siteConfig.address;
   return `${street}, ${city} – ${postalCode}, ${region}, India`;

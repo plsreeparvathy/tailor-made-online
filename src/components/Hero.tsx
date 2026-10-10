@@ -1,96 +1,114 @@
 "use client";
 
+import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import BlockPrintPattern from "./BlockPrintPattern";
-import { ENQUIRY_FORM_URL } from "@/lib/enquiryFormUrl";
+import WhatsAppIcon from "./WhatsAppIcon";
+import { siteConfig } from "@/lib/site";
+
+const WHATSAPP_START_URL = `${siteConfig.whatsapp}?text=${encodeURIComponent(
+  "Hi TailorMade Online! I'd like to start my own label."
+)}`;
 
 export default function Hero() {
-  const scrollTo = (id: string) => {
-    document.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
-    <section aria-labelledby="hero-heading" className="relative min-h-screen w-full bg-pearl">
-      {/* Pearl · peach · pink background wash */}
+    <section
+      aria-labelledby="hero-heading"
+      className="relative w-full overflow-hidden bg-pearl lg:min-h-screen"
+    >
+      {/* Warm peach · pink wash */}
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
-        <div className="absolute inset-0 pearl-peach-pink-glow opacity-80" />
-        <BlockPrintPattern opacity={0.03} />
-        <div className="absolute inset-0 linen-texture opacity-20" />
+        <div className="absolute inset-0 bg-gradient-to-br from-peach-light via-pearl to-pink-light" />
+        <div className="absolute -left-32 top-10 h-[28rem] w-[28rem] rounded-full bg-peach/40 blur-3xl" />
+        <div className="absolute -right-24 bottom-0 h-[32rem] w-[32rem] rounded-full bg-pink/30 blur-3xl" />
+        <BlockPrintPattern opacity={0.05} />
       </div>
 
-      {/* True viewport center */}
-      <div className="relative z-10 grid min-h-screen w-full place-items-center px-6 pt-24 pb-16">
+      <div className="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-12 px-6 pb-16 pt-28 sm:px-8 lg:min-h-screen lg:grid-cols-[1.1fr_1fr] lg:gap-16 lg:pb-20">
+        {/* Copy */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-          className="flex w-full max-w-3xl flex-col items-center text-center"
+          className="flex flex-col items-center text-center lg:items-start lg:text-left"
         >
-          <div className="mb-6 flex items-center justify-center gap-4">
-            <span className="h-px w-12 bg-peach sm:w-16" />
-            <span className="font-body text-[10px] uppercase tracking-[0.35em] text-brown-muted">
-              Bengaluru · Since 2017
-            </span>
-            <span className="h-px w-12 bg-peach sm:w-16" />
-          </div>
+          <p className="font-body text-sm uppercase tracking-[0.25em] text-brown/70">
+            Bengaluru · Since 2017
+          </p>
 
-          <h1 id="hero-heading" className="w-full text-center font-heading text-[2.75rem] font-light leading-[0.95] tracking-[0.08em] text-brown sm:text-6xl md:text-7xl">
-            TAILOR
-            <span className="text-peach-deep">-</span>
-            MADE
+          <h1
+            id="hero-heading"
+            className="mt-5 whitespace-nowrap font-heading text-[clamp(2.25rem,12vw,3rem)] font-semibold leading-[0.95] tracking-[0.04em] text-brown sm:text-7xl xl:text-[5.5rem]"
+          >
+            TAILOR<span className="text-peach-deep">-</span>MADE
           </h1>
-          <p className="mt-2 text-center font-heading text-xl italic tracking-[0.06em] text-pink md:text-2xl">
+          <p className="mt-1 font-heading text-3xl italic text-pink-deep sm:text-4xl">
             Online
           </p>
-          <p className="mt-3 text-center font-subheading text-sm italic tracking-wide text-brown-muted md:text-base">
-            Curate &amp; Create Your Own Label
-          </p>
 
-          <div className="my-8 flex items-center justify-center gap-2" aria-hidden="true">
-            <span className="h-1.5 w-1.5 rotate-45 bg-pink" />
-            <span className="h-px w-20 bg-gradient-to-r from-transparent via-peach/60 to-transparent sm:w-28" />
-            <span className="h-1 w-1 rounded-full bg-peach" />
-            <span className="h-px w-20 bg-gradient-to-r from-transparent via-peach/60 to-transparent sm:w-28" />
-            <span className="h-1.5 w-1.5 rotate-45 bg-pink" />
-          </div>
-
-          <h2 className="w-full text-center font-heading text-2xl font-light leading-[1.3] text-brown sm:text-3xl md:text-4xl">
-            Where Indian Craft
-            <br />
-            <span className="italic text-brown-muted">Meets Contemporary Style</span>
-          </h2>
-
-          <p className="mt-5 max-w-xl text-center font-body text-[15px] leading-[1.75] text-brown-muted md:text-base">
-            Bengaluru&apos;s trusted low-MOQ manufacturer for ethnic wear labels —
-            block prints, handlooms, kurtis, co-ord sets, and artisanal Indian
-            fashion. Partner with a women-led team and start production from just{" "}
-            <em className="font-subheading not-italic text-peach-deep">100 pieces.</em>
+          <p className="mt-8 max-w-md font-body text-lg leading-relaxed text-brown">
+            Ethnic wear manufacturing for designers and boutiques — block prints,
+            handlooms, kurtis and co&#8209;ord sets, from just 100&nbsp;pieces.
           </p>
 
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-6"
+            className="mt-10 flex flex-col items-center gap-6 sm:flex-row sm:gap-8"
           >
-            <Button size="lg" asChild>
-              <a href={ENQUIRY_FORM_URL} target="_blank" rel="noopener noreferrer">
+            <Button size="lg" className="h-13 px-8 py-4 text-base [&_svg]:size-5" asChild>
+              <a href={WHATSAPP_START_URL} target="_blank" rel="noopener noreferrer">
+                <WhatsAppIcon />
                 Start Your Label
               </a>
             </Button>
-            <button
-              onClick={() => scrollTo("#how-it-works")}
-              className="group font-body text-sm tracking-wide text-brown transition-colors hover:text-peach-deep"
+            <Link
+              href="/wholesale"
+              className="group font-body text-base text-brown transition-colors hover:text-pink-deep"
             >
-              <span className="border-b border-brown/30 pb-0.5 transition-colors group-hover:border-peach-deep">
-                How It Works
-              </span>
+              Wholesale
               <span className="ml-1.5 inline-block transition-transform group-hover:translate-x-1">
                 →
               </span>
-            </button>
+            </Link>
           </motion.div>
+        </motion.div>
+
+        {/* Photo collage */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.96 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          className="relative mx-auto w-full max-w-md lg:max-w-none"
+        >
+          <div className="relative ml-auto aspect-[4/5] w-[82%] overflow-hidden rounded-[2rem] shadow-2xl ring-8 ring-white/70">
+            <Image
+              src="/images/one.jpeg"
+              alt="Block-printed fabric with measuring tape and thread at the cutting table"
+              fill
+              priority
+              sizes="(min-width: 1024px) 40vw, 80vw"
+              className="object-cover"
+            />
+          </div>
+          <div className="absolute -left-2 bottom-[-6%] aspect-square w-[46%] overflow-hidden rounded-[1.5rem] shadow-xl ring-8 ring-white sm:left-0">
+            <Image
+              src="/images/six.jpeg"
+              alt="Hand-embroidered detailing on a kurta"
+              fill
+              sizes="(min-width: 1024px) 22vw, 45vw"
+              className="object-cover"
+            />
+          </div>
+          <div className="absolute left-[4%] top-[8%] rounded-2xl bg-white/95 px-5 py-3 shadow-warm backdrop-blur">
+            <p className="font-heading text-2xl font-semibold italic leading-none text-pink-deep">Handcrafted</p>
+            <p className="mt-1 font-body text-xs font-medium uppercase tracking-wider text-brown">
+              Block prints · Handlooms
+            </p>
+          </div>
         </motion.div>
       </div>
     </section>
