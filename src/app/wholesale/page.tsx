@@ -38,7 +38,7 @@ export const metadata: Metadata = {
 // Page copy.
 const content = {
   intro:
-    "Alongside private-label manufacturing, we supply ethnic wear wholesale to boutiques, resellers and retailers.",
+    "Discover exclusive kurti collections with low MOQ, created for emerging brands and boutiques.",
   heroImages: {
     main: {
       src: "/images/brands/fabsay-lehraa.webp",
@@ -144,8 +144,7 @@ export default function WholesalePage() {
               id="wholesale-heading"
               className="mt-4 font-heading text-4xl font-semibold leading-tight text-brown sm:text-5xl xl:text-6xl"
             >
-              Kurtis your customers will love,{" "}
-              <em className="text-pink-deep">wholesale from just 25 pieces</em>
+              Wholesale <em className="text-pink-deep">made accessible</em>
             </h1>
             <p className="mx-auto mt-6 max-w-md font-body text-lg leading-relaxed text-brown lg:mx-0">
               {content.intro}
