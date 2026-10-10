@@ -4,14 +4,35 @@ import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppIcon from "@/components/WhatsAppIcon";
+import JsonLd from "@/components/JsonLd";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { buildWholesaleJsonLd, wholesaleFaqItems } from "@/lib/seo";
 import { Button } from "@/components/ui/button";
-import { WHATSAPP_WHOLESALE_URL } from "@/lib/site";
+import { WHATSAPP_WHOLESALE_URL, siteConfig } from "@/lib/site";
+
+const title = "Wholesale Kurtis for Resellers – MOQ 25 | TailorMade Online";
+const description =
+  "Wholesale cotton kurtis & co-ords from Fabsay and Label Kosa. MOQ 25 pieces, ₹20,000 minimum, reorders from 10 pieces. For boutiques & Instagram sellers.";
 
 export const metadata: Metadata = {
-  title: "Wholesale",
-  description:
-    "Wholesale ethnic wear from TailorMade Online, Bengaluru — Fabsay and Label Kosa kurtis and co-ords. 25-piece MOQ, ₹20,000 minimum order, reorders from 10 pieces.",
+  title: { absolute: title },
+  description,
   alternates: { canonical: "/wholesale" },
+  openGraph: {
+    type: "website",
+    locale: siteConfig.locale.replace("_", "-"),
+    siteName: siteConfig.name,
+    url: "/wholesale",
+    title,
+    description,
+    images: "/opengraph-image",
+  },
+  twitter: { card: "summary_large_image", title, description, images: "/opengraph-image" },
 };
 
 // Page copy.
@@ -20,20 +41,20 @@ const content = {
     "Alongside private-label manufacturing, we supply ethnic wear wholesale to boutiques, resellers and retailers.",
   heroImages: {
     main: {
-      src: "/images/brands/fabsay-lehraa.jpg",
+      src: "/images/brands/fabsay-lehraa.webp",
       alt: "Fabsay purple cotton kurti with woven butis",
     },
     inset: {
-      src: "/images/brands/labelkosa-raag.jpg",
+      src: "/images/brands/labelkosa-raag.webp",
       alt: "Label Kosa checked cotton kurti with red embroidered neckline",
     },
   },
   brands: [
     {
       name: "Fabsay",
-      logo: { src: "/images/brands/fabsay-logo.png", width: 500, height: 400 },
+      logo: { src: "/images/brands/fabsay-logo.webp", width: 250, height: 200 },
       image: {
-        src: "/images/brands/fabsay-banner.jpg",
+        src: "/images/brands/fabsay-banner.webp",
         alt: "Woman in a Fabsay indigo hand block printed kurti",
       },
       tagline: "Authentic hand block cotton — azo-free, skin-safe, artisan-made.",
@@ -46,9 +67,9 @@ const content = {
     },
     {
       name: "Label Kosa",
-      logo: { src: "/images/brands/labelkosa-logo.png", width: 514, height: 200 },
+      logo: { src: "/images/brands/labelkosa-logo.webp", width: 360, height: 140 },
       image: {
-        src: "/images/brands/labelkosa-product.jpg",
+        src: "/images/brands/labelkosa-product.webp",
         alt: "Woman in a Label Kosa pink checked cotton kurti with embroidery",
       },
       tagline: "Comfort. Breathability. Longevity.",
@@ -107,6 +128,7 @@ const terms = [
 export default function WholesalePage() {
   return (
     <main id="main-content">
+      <JsonLd schemas={buildWholesaleJsonLd()} />
       <Navbar />
 
       <section
@@ -115,14 +137,14 @@ export default function WholesalePage() {
       >
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-16 sm:px-8 lg:grid-cols-2 lg:py-24">
           <div className="text-center lg:text-left">
-            <p className="font-body text-sm uppercase tracking-[0.25em] text-brown/70">
-              TailorMade Online
+            <p className="font-body text-sm uppercase tracking-[0.25em] text-brown-muted">
+              Wholesale · MOQ 25 pieces
             </p>
             <h1
               id="wholesale-heading"
-              className="mt-4 font-heading text-5xl font-semibold text-brown sm:text-6xl"
+              className="mt-4 font-heading text-4xl font-semibold leading-tight text-brown sm:text-5xl xl:text-6xl"
             >
-              Wholesale
+              Wholesale kurtis for boutiques &amp; resellers
             </h1>
             <p className="mx-auto mt-6 max-w-md font-body text-lg leading-relaxed text-brown lg:mx-0">
               {content.intro}
@@ -181,7 +203,7 @@ export default function WholesalePage() {
       <section aria-labelledby="brands-heading" className="bg-pearl py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-6 sm:px-8">
           <div className="max-w-2xl">
-            <p className="font-body text-sm uppercase tracking-[0.25em] text-brown/70">
+            <p className="font-body text-sm uppercase tracking-[0.25em] text-brown-muted">
               Wholesale
             </p>
             <h2
@@ -222,7 +244,7 @@ export default function WholesalePage() {
                 <dl className="mt-6 space-y-3 border-t border-pink/30 pt-5">
                   {brand.details.map((detail) => (
                     <div key={detail.label}>
-                      <dt className="font-body text-xs uppercase tracking-wider text-brown/60">
+                      <dt className="font-body text-xs uppercase tracking-wider text-brown-muted">
                         {detail.label}
                       </dt>
                       <dd className="mt-1 font-body text-sm text-brown">{detail.value}</dd>
@@ -241,7 +263,7 @@ export default function WholesalePage() {
         className="scroll-mt-20 bg-peach-wash py-20 sm:scroll-mt-24 lg:py-28"
       >
         <div className="mx-auto max-w-4xl px-6 sm:px-8">
-          <p className="font-body text-sm uppercase tracking-[0.25em] text-brown/70">
+          <p className="font-body text-sm uppercase tracking-[0.25em] text-brown-muted">
             Wholesale
           </p>
           <h2
@@ -270,7 +292,7 @@ export default function WholesalePage() {
                 <dl className="mt-6 divide-y divide-pink/20 border-y border-pink/20">
                   {group.items.map((item) => (
                     <div key={item.label} className="grid gap-1 py-4 sm:grid-cols-[14rem_1fr] sm:gap-6">
-                      <dt className="font-body text-sm font-semibold uppercase tracking-wider text-brown/70">
+                      <dt className="font-body text-sm font-semibold uppercase tracking-wider text-brown-muted">
                         {item.label}
                       </dt>
                       <dd className="font-body text-base leading-relaxed text-brown">{item.value}</dd>
@@ -290,6 +312,25 @@ export default function WholesalePage() {
               </a>
             </Button>
           </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="wholesale-faq-heading" className="bg-pearl py-20 lg:py-28">
+        <div className="mx-auto max-w-3xl px-6 lg:px-8">
+          <h2
+            id="wholesale-faq-heading"
+            className="text-center font-heading text-4xl font-semibold text-brown sm:text-5xl"
+          >
+            Wholesale FAQs
+          </h2>
+          <Accordion type="single" collapsible className="mt-12 space-y-4">
+            {wholesaleFaqItems.map((item, index) => (
+              <AccordionItem key={item.question} value={`item-${index}`}>
+                <AccordionTrigger>{item.question}</AccordionTrigger>
+                <AccordionContent>{item.answer}</AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </section>
 

@@ -34,16 +34,18 @@ export default function Hero() {
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
           className="flex flex-col items-center text-center lg:items-start lg:text-left"
         >
-          <p className="font-body text-sm uppercase tracking-[0.25em] text-brown/70">
-            Bengaluru · Since 2017
-          </p>
-
           <h1
             id="hero-heading"
+            className="font-body text-sm uppercase tracking-[0.25em] text-brown"
+          >
+            Low-MOQ ethnic wear manufacturer · Bengaluru
+          </h1>
+
+          <p
             className="mt-5 whitespace-nowrap font-heading text-[clamp(2.25rem,12vw,3rem)] font-semibold leading-[0.95] tracking-[0.04em] text-brown sm:text-7xl xl:text-[5.5rem]"
           >
             TAILOR<span className="text-peach-deep">-</span>MADE
-          </h1>
+          </p>
           <p className="mt-1 font-heading text-3xl italic text-pink-deep sm:text-4xl">
             Online
           </p>

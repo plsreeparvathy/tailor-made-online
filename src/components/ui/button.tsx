@@ -9,13 +9,13 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-peach-deep text-white hover:shadow-warm hover:scale-[1.02] active:scale-[0.98]",
+          "bg-peach-ink text-white hover:shadow-warm hover:scale-[1.02] active:scale-[0.98]",
         secondary:
-          "border-2 border-pink bg-transparent text-pink hover:bg-pink hover:text-pearl hover:shadow-warm hover:scale-[1.02]",
+          "border-2 border-pink-deep bg-transparent text-pink-deep hover:bg-pink-deep hover:text-pearl hover:shadow-warm hover:scale-[1.02]",
         outline:
           "border-2 border-pearl bg-transparent text-pearl hover:bg-pearl/10 hover:shadow-warm hover:scale-[1.02]",
         ghost: "hover:bg-peach-wash hover:text-brown",
-        link: "text-peach-deep underline-offset-4 hover:underline",
+        link: "text-peach-ink underline-offset-4 hover:underline",
       },
       size: {
         default: "h-11 px-6 py-2",

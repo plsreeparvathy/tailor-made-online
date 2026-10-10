@@ -18,20 +18,22 @@ const config: Config = {
           light: "#FDE8DC",
           wash: "#FCE8DE",
           deep: "#E89878",
+          /* Text-safe terracotta — white text on it passes WCAG AA */
+          ink: "#B5583A",
         },
         pink: {
           DEFAULT: "#E888A0",
           soft: "#FAE4EA",
           light: "#FADCE6",
-          deep: "#C87890",
+          deep: "#96455F",
         },
         /* Legacy aliases — mapped to the trio above */
         sand: "#FCE8DE",
         blush: "#FAE4EA",
         brown: {
-          DEFAULT: "#7D5E68",
-          muted: "#B898A0",
-          deep: "#C87890",
+          DEFAULT: "#6E4F59",
+          muted: "#7A5C66",
+          deep: "#96455F",
         },
         terracotta: "#E89878",
         forest: "#E888A0",
